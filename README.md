@@ -3,7 +3,7 @@ This project aims to automatically document Linux capability calls capable() wit
 
 Currently, the usual criteria for managing privileges on operating systems do not allow compliance with regulations such as the RGPD or export control rules. Indeed, administrators can override security mechanisms by granting inappropriate privileges for their administrative tasks. In the case of multi-administrator systems, the objective is to eliminate trust agreements between co-administrators, to minimise the risks associated with these agreements and thus to better comply with zero-trust policies.
 
-The Linux kernel documentation is incomplete with regard to the privileges required to use some of its features. For any admin, or most of developers, capabilities are unknown. I'd say only hackers or kernel developers really know their existence and their scope.
+The Linux kernel provides capabilities, which could fullfill the needs. But the documentation is incomplete with regard to the privileges required to use some of its features. For any admin, or most of developers, capabilities are unknown. I'd say only hackers or kernel developers really know their existence and their scope.
 
 To solve the lack of documentation, I tried to analyze the kernel to "map" the capability requirements implied by system calls and describe them automatically with trees. This work could help explain why a privilege is needed or not, regardless of the kernel version. This way system administrator could know the scope of action through SAST or DAST, then configure his co-administrative policy to these scopes.
 
@@ -17,4 +17,10 @@ I had two approach to "map" capabilities:
 
 This repo is source code about what I tried to do with the time that I had.
 
-Note: I'm not a C++ developer at all. So The few I tried to do is huge time to learn the language.
+__Note: I'm not a C++ developer at all. So The few I tried to do is huge time to learn the language.__
+
+Maybe I could dev it in Rust ? I'll see it next time that I could.
+
+## How to build it ?
+
+I have created a folder in clang-tools-extra folder from clang-llvm repo, and compile using ninja. While adding `add_subdirectory(capable)` in parent CMakeLists.txt
