@@ -23,4 +23,4 @@ Maybe I could dev it in Rust ? I'll see it next time that I could.
 
 ## How to build it ?
 
-I have created a folder in clang-tools-extra folder from clang-llvm repo, and compile using ninja. While adding `add_subdirectory(capable)` in parent CMakeLists.txt
+I created a folder in clang-tools-extra folder from clang-llvm repo, and compile using ninja. While adding `add_subdirectory(capable)` in parent CMakeLists.txt
